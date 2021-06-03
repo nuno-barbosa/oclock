@@ -1,0 +1,55 @@
+function setAlarm(el){
+	var time = document.getElementById('alarmTime').valueAsNumber;
+	
+ 
+	var alarm = new Date(time);
+	var alarmTime = new Date(alarm.getUTCHours(), alarm.getUTCMinutes());
+	var duration = alarmTime.getTime() - (new Date()).getTime();
+ 
+	if(duration < 0){
+		alert('Time is already passed');
+		return;
+	}
+ 
+	timer = setTimeout(initAlarm, duration);
+	el.innerHTML = "<span class='glyphicon glyphicon-remove'></span> Cancel Alarm";
+	el.setAttribute('onclick', 'cancelAlarm(this);');
+	el.setAttribute('class', 'btn btn-danger');
+}
+
+
+
+
+MN CODE
+
+
+    // var heureReveil = document.getElementById('heureReveil').value; //On récupére l'heure de l'alarme dans le input Time
+    // console.log('heureReveil:', heureReveil)
+
+    // var descriptionReveil = document.getElementById('descriptionReveil').value; //On récupére la description de l'alarme dans le input Text
+    // console.log('descriptionReveil:', descriptionReveil)
+
+    // var date = new Date(); //On recupére l'heure actuelle 
+    // var h = date.getHours(); // 0 - 23 
+    // var m = date.getMinutes(); // 0 - 59
+
+    // var time = h + ":" + m; //On l'attribue a une variable l'heure actuelle au même format que l'heure de l'alarme que l'on rentre dans le input Time
+    // console.log('time:', time)
+
+    // var temps
+
+    // setInterval(setTimeout(time), 1000);
+
+    // function updateCountdown() { //On crée notre function
+    //     const minutes = Math.floor(time / 60); //Math.floor divise et arrondit a l'inferieur, si 90 dix secondes on arrondit a 1 minute
+    //     let seconds = time % 60; //Modulo prend la valeur qui ne rentre pas dans la division, donc on recupere les 30 secondes perdues dans l'arrondi de la division au dessus
+
+    //     seconds = seconds < 10 ? '0' + seconds : seconds; //Si secondes est inferieur a 10, on concatène 0 et la seconde, autrement l'affichage sera par exemple 1:9
+
+    //     countDownEl.innerHTML = `${minutes} : ${seconds}`;//innerHTML permet d'inserer des valeurs dans notre code html, ici les variables minutes et secondes
+    //     if (time > 0) { //Si le temps restant est supérieur a 0;
+    //         time--; //On décrémente
+    //     } else { //Sinon
+    //         countDownEl.innerHTML = window.alert('Le temps est écoulé !'); //On change la valeur envoyée dans l'HTML par une phrase, on pourrait ajouter une alerte.
+    //     }
+    // }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <title>Minuteur</title>
+
+    <link href="../assets/bootstrap.css" rel="stylesheet"/>
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link href="../style.css" rel="stylesheet"/>
+</head>
+
+<body class="text-center pt-5 bg-dark text-warning">
+<h1 class="mb-5">Minuteur : <br/>Entrez le nombre de minutes</h3>
+
+    <div class="container">
+        <input
+                type="text"
+                class="form-control text-center"
+                min="1"
+                max="99"
+                size="1"
+                maxlength="2"
+                id="choice"
+                value="1"
+        />
+        <br/><br/>
+        <div class="form-group">
+            <!-- BOUTON + -->
+            <button
+                    class="btn btn-warning"
+                    type="button"
+                    onclick="lessInputValue()"
+            >
+                -
+            </button>
+            <!-- Bouton Lancer -->
+            <button
+                    class="btn btn-warning"
+                    type="button"
+                    onclick="getInputValue();"
+            >
+                Lancer
+            </button>
+            <!-- Bouton - -->
+            <button
+                    class="btn btn-warning"
+                    type="button"
+                    onclick="plusInputValue();"
+            >
+                +
+            </button>
+        </div>
+
+
+    </div>
+
+    <div id="countdown"></div>
+
+    <br/><br/><br/><br/>
+    <button
+            class="btn btn-warning"
+            type="button"
+            onclick="window.location ='../index.html'"
+            id="goToIndex"
+    >Retour au menu
+    </button>
+
+
+    <script src="../assets/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/bootstrap.js" type="text/javascript"></script>
+    <script src="minuteur.js" type="text/javascript"></script>
+</body>
+</html>
